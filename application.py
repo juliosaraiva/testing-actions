@@ -8,7 +8,7 @@ def say_hello(username = "Julio Saraiva"):
 header_text = '''
     <html>\n<head> <title>EB Flask Test on AWS</title> </head>\n<body>'''
 instructions = '''
-    <h1>This is the new version of this app v1.0</h1>
+    <h1>This is the version v2.0</h1>
     <p><em>Hint</em>: This is a RESTful web service! Append a username
     to the URL (for example: <code>/Thelonious</code>) to say hello to
     someone specific.</p>\n'''
