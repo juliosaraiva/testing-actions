@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Payload
+        if: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.env }}
         run: echo ${{ github.event.client_payload.env }}
       - uses: actions/checkout@v1
       - name: Set up Python 3.8
