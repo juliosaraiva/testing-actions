@@ -53,4 +53,4 @@ jobs:
     steps:
       - name: Print the Job Status
         run: |
-          echo "${{ config }}"
+          echo "${{ jobs.config }}"
