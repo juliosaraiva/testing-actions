@@ -8,7 +8,20 @@ jobs:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
         node_version: [10, 12, 14]
+        include:
+          - os: ubuntu-latest
+            node_version: 12
+            is_node_lts: "true"
+        exclude:
+          - os: ubuntu-latest
+            node_version: 10
+          - os: macos-latest
+            node_version:
+              - 10
+              - 14
     runs-on: ${{ matrix.os }}
+    env:
+      IS_NODE_LTS: ${{ matrix.is_node_lts }}
     steps:
       - name: Log node version
         run: node -v
@@ -16,4 +29,6 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
       - name: Log node version
-        run: node -v
+        run: |
+          node -v
+          echo $IS_NODE_LTS
