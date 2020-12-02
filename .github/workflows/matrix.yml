@@ -16,9 +16,9 @@ jobs:
           - os: ubuntu-latest
             node_version: 10
           - os: macos-latest
-            node_version:
-              - 10
-              - 14
+            node_version: 10
+          - os: macos-latest
+            node_version: 14
     runs-on: ${{ matrix.os }}
     env:
       IS_NODE_LTS: ${{ matrix.is_node_lts }}
