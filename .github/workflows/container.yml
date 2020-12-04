@@ -21,6 +21,8 @@ jobs:
           entrypoint: /usr/local/bin/node
           args: -v
       - uses: actions/checkout@v1
+      - name: Set permissions
+        run: chmod 755 entrypoint.sh
       - name: Run Entrypoint
         uses: docker://node:12.14.1-alpine3.10
         with:
